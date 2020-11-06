@@ -3,16 +3,23 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-        Boss boss = new Boss();
-        Weapon weapon = new Weapon();
-        weapon.setName("ar-15");
-        weapon.setType("Long fire");
+        Medic medic = new Medic();
+        medic.setHealth(700);
+        medic.setDamage(70);
 
-        boss.setHealth(700);
-        boss.setDamage(70);
-        boss.setSuperAblity("Ultra");
-        boss.setWeapon(weapon);
-        System.out.println("Health:" + boss.getHealth() + "\n" + "Damage: " + boss.getDamage() + "\n" + "SuperAbility:" + boss.getSuperAblity() + "\n" + "Weapon name: " + boss.getWeapon().getName());
+        Magic magic = new Magic();
+        magic.setHealth(700);
+        magic.setDamage(70);
 
+        Warrior warrior = new Warrior();
+        warrior.setHealth(700);
+        warrior.setDamage(70);
+
+        Hero[] heroes = new Hero[]{magic, warrior, medic};
+
+        for (int i = 0; i < heroes.length; i++) {
+            heroes[i].applySuperAbility("CRITICAL DAMAGE");
+
+        }
     }
 }
